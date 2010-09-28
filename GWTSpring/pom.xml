@@ -126,7 +126,6 @@
   </dependencies>
 
   <build>   
-  <outputDirectory>${project.build.directory}/classes</outputDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
