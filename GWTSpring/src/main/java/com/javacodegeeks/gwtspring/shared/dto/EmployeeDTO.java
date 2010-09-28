@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EMPLOYEE")
+@Table(name="employee")
 public class EmployeeDTO implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 7440297955003302414L;

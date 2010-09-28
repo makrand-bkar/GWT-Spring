@@ -7,11 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.orm.jpa.JpaCallback;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 
 public abstract class JpaDAO<K, E> extends JpaDaoSupport {
 	protected Class<E> entityClass;
+	final Logger logger = LoggerFactory.getLogger(JpaDAO.class);
 
 	@SuppressWarnings("unchecked")
 	public JpaDAO() {
@@ -48,6 +51,7 @@ public abstract class JpaDAO<K, E> extends JpaDaoSupport {
 	
 	@SuppressWarnings("unchecked")
 	public List<E> findAll() {
+		logger.debug("DAO FindAll method invoked");
 		Object res = getJpaTemplate().execute(new JpaCallback() {
 
 			public Object doInJpa(EntityManager em) throws PersistenceException {
